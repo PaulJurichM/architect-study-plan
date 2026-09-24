@@ -1,0 +1,158 @@
+{
+  "labels": [
+    {
+      "name": "block-1-http",
+      "color": "1f6feb",
+      "description": "HTTP, REST, безопасность"
+    },
+    {
+      "name": "block-2-postgres",
+      "color": "336791",
+      "description": "PostgreSQL изнутри"
+    },
+    {
+      "name": "block-3-architecture",
+      "color": "8250df",
+      "description": "Микросервисы, DDD, устойчивость"
+    },
+    {
+      "name": "capstone",
+      "color": "d29922",
+      "description": "Итоговый проект"
+    }
+  ],
+  "milestones": [
+    {
+      "title": "Блок 1. HTTP, REST и безопасность",
+      "description": "Недели 1–10, параллельный трек"
+    },
+    {
+      "title": "Блок 2. PostgreSQL изнутри",
+      "description": "Недели 1–5"
+    },
+    {
+      "title": "Блок 3. Микросервисы, DDD и устойчивость",
+      "description": "Недели 5–10"
+    },
+    {
+      "title": "Итоговый проект",
+      "description": "Недели 11–12"
+    }
+  ],
+  "issues": [
+    {
+      "title": "1.1 Путь HTTP-запроса: DNS, TCP, TLS, HTTP/1.1–2–3",
+      "milestone": "Блок 1. HTTP, REST и безопасность",
+      "label": "block-1-http",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/01-http-rest-security/1.1-request-lifecycle.html\n**Исходник:** [`01-http-rest-security/1.1-request-lifecycle.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/01-http-rest-security/1.1-request-lifecycle.md)\n**Неделя:** 1\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "1.2 TLS и PKI: сертификаты, цепочки доверия, mTLS",
+      "milestone": "Блок 1. HTTP, REST и безопасность",
+      "label": "block-1-http",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/01-http-rest-security/1.2-tls-pki.html\n**Исходник:** [`01-http-rest-security/1.2-tls-pki.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/01-http-rest-security/1.2-tls-pki.md)\n**Неделя:** 2–3\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "1.3 REST-семантика: идемпотентность, кэширование, ошибки, версионирование",
+      "milestone": "Блок 1. HTTP, REST и безопасность",
+      "label": "block-1-http",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/01-http-rest-security/1.3-rest-semantics.html\n**Исходник:** [`01-http-rest-security/1.3-rest-semantics.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/01-http-rest-security/1.3-rest-semantics.md)\n**Неделя:** 4–5\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "1.4 OAuth 2.0, OpenID Connect, JWT",
+      "milestone": "Блок 1. HTTP, REST и безопасность",
+      "label": "block-1-http",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/01-http-rest-security/1.4-oauth-oidc-jwt.html\n**Исходник:** [`01-http-rest-security/1.4-oauth-oidc-jwt.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/01-http-rest-security/1.4-oauth-oidc-jwt.md)\n**Неделя:** 6–7\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "1.5 Защита API: OWASP API Top 10, подписи, вебхуки, rate limiting",
+      "milestone": "Блок 1. HTTP, REST и безопасность",
+      "label": "block-1-http",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/01-http-rest-security/1.5-api-security.html\n**Исходник:** [`01-http-rest-security/1.5-api-security.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/01-http-rest-security/1.5-api-security.md)\n**Неделя:** 8–9\n\n**Итог блока 1: переписать НФТ одной обезличенной интеграции**\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "2.1 MVCC и хранение: версии строк, VACUUM, bloat",
+      "milestone": "Блок 2. PostgreSQL изнутри",
+      "label": "block-2-postgres",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/2.1-mvcc-storage.html\n**Исходник:** [`02-postgresql/2.1-mvcc-storage.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/02-postgresql/2.1-mvcc-storage.md)\n**Неделя:** 1\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "2.2 Изоляция транзакций и аномалии + лаба 1",
+      "milestone": "Блок 2. PostgreSQL изнутри",
+      "label": "block-2-postgres",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/2.2-isolation.html\n**Исходник:** [`02-postgresql/2.2-isolation.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/02-postgresql/2.2-isolation.md)\n**Неделя:** 2\n\n**Лаба 1:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/labs/lab-01-isolation.html\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику и лабораторную\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "2.3 Блокировки: табличные, строчные, advisory, дедлоки, DDL + лаба 2",
+      "milestone": "Блок 2. PostgreSQL изнутри",
+      "label": "block-2-postgres",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/2.3-locks.html\n**Исходник:** [`02-postgresql/2.3-locks.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/02-postgresql/2.3-locks.md)\n**Неделя:** 3\n\n**Лаба 2:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/labs/lab-02-locks.html\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику и лабораторную\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "2.4 Планировщик: статистика, методы доступа, соединения, EXPLAIN + лаба 3",
+      "milestone": "Блок 2. PostgreSQL изнутри",
+      "label": "block-2-postgres",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/2.4-planner.html\n**Исходник:** [`02-postgresql/2.4-planner.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/02-postgresql/2.4-planner.md)\n**Неделя:** 4\n\n**Лаба 3:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/labs/lab-03-planner.html\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику и лабораторную\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "2.5 Индексы в глубину",
+      "milestone": "Блок 2. PostgreSQL изнутри",
+      "label": "block-2-postgres",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/2.5-indexes.html\n**Исходник:** [`02-postgresql/2.5-indexes.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/02-postgresql/2.5-indexes.md)\n**Неделя:** 4\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "2.6 WAL, репликация, безопасные миграции",
+      "milestone": "Блок 2. PostgreSQL изнутри",
+      "label": "block-2-postgres",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/02-postgresql/2.6-wal-replication-migrations.html\n**Исходник:** [`02-postgresql/2.6-wal-replication-migrations.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/02-postgresql/2.6-wal-replication-migrations.md)\n**Неделя:** 5\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "3.1 Зачем микросервисы и когда лучше модульный монолит",
+      "milestone": "Блок 3. Микросервисы, DDD и устойчивость",
+      "label": "block-3-architecture",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/03-microservices-ddd/3.1-why-microservices.html\n**Исходник:** [`03-microservices-ddd/3.1-why-microservices.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/03-microservices-ddd/3.1-why-microservices.md)\n**Неделя:** 5\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "3.2 Стратегический DDD: поддомены, контексты, карта контекстов",
+      "milestone": "Блок 3. Микросервисы, DDD и устойчивость",
+      "label": "block-3-architecture",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/03-microservices-ddd/3.2-strategic-ddd.html\n**Исходник:** [`03-microservices-ddd/3.2-strategic-ddd.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/03-microservices-ddd/3.2-strategic-ddd.md)\n**Неделя:** 6\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "3.3 Сеть: OSI, балансировщик, API Gateway, service mesh",
+      "milestone": "Блок 3. Микросервисы, DDD и устойчивость",
+      "label": "block-3-architecture",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/03-microservices-ddd/3.3-network-gateway-lb.html\n**Исходник:** [`03-microservices-ddd/3.3-network-gateway-lb.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/03-microservices-ddd/3.3-network-gateway-lb.md)\n**Неделя:** 7\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "3.4 Коммуникация: синхронная, асинхронная, брокеры, гарантии",
+      "milestone": "Блок 3. Микросервисы, DDD и устойчивость",
+      "label": "block-3-architecture",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/03-microservices-ddd/3.4-communication.html\n**Исходник:** [`03-microservices-ddd/3.4-communication.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/03-microservices-ddd/3.4-communication.md)\n**Неделя:** 8\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "3.5 Данные: database per service, Saga, Outbox, CQRS",
+      "milestone": "Блок 3. Микросервисы, DDD и устойчивость",
+      "label": "block-3-architecture",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/03-microservices-ddd/3.5-data-patterns.html\n**Исходник:** [`03-microservices-ddd/3.5-data-patterns.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/03-microservices-ddd/3.5-data-patterns.md)\n**Неделя:** 9\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "3.6 Устойчивость: таймауты, ретраи, circuit breaker, bulkhead",
+      "milestone": "Блок 3. Микросервисы, DDD и устойчивость",
+      "label": "block-3-architecture",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/03-microservices-ddd/3.6-resilience.html\n**Исходник:** [`03-microservices-ddd/3.6-resilience.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/03-microservices-ddd/3.6-resilience.md)\n**Неделя:** 10\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "3.7 Наблюдаемость: логи, метрики, трассировка, SLO",
+      "milestone": "Блок 3. Микросервисы, DDD и устойчивость",
+      "label": "block-3-architecture",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/03-microservices-ddd/3.7-observability.html\n**Исходник:** [`03-microservices-ddd/3.7-observability.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/03-microservices-ddd/3.7-observability.md)\n**Неделя:** 10\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "4. Итоговый проект: архитектурный пакет",
+      "milestone": "Итоговый проект",
+      "label": "capstone",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/04-capstone/README.html\n**Исходник:** [`04-capstone/README.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/04-capstone/README.md)\n**Неделя:** 11–12\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    }
+  ]
+}

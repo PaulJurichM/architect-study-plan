@@ -1,0 +1,49 @@
+title: Architect Study Plan
+description: Программа прокачки системного аналитика и архитектора решений — HTTP и безопасность, PostgreSQL изнутри, микросервисы и DDD
+lang: ru
+url: https://pauljurichm.github.io
+baseurl: /architect-study-plan
+
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+relative_links:
+  enabled: true
+  collections: false
+
+color_scheme: light
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 2
+  tokenizer_separator: /[\s\-/]+/
+
+heading_anchors: true
+back_to_top: true
+back_to_top_text: "Наверх"
+
+mermaid:
+  version: "11.4.1"
+
+aux_links:
+  "Репозиторий": https://github.com/PaulJurichM/architect-study-plan
+  "Прогресс (milestones)": https://github.com/PaulJurichM/architect-study-plan/milestones
+aux_links_new_tab: true
+
+gh_edit_link: true
+gh_edit_link_text: "Редактировать на GitHub"
+gh_edit_repository: https://github.com/PaulJurichM/architect-study-plan
+gh_edit_branch: main
+gh_edit_view_mode: edit
+
+footer_content: "Личная учебная программа. Материалы обезличены."
+
+exclude:
+  - scripts/
+  - .github/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
