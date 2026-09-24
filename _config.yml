@@ -30,8 +30,8 @@ mermaid:
 
 aux_links:
   "Репозиторий": https://github.com/PaulJurichM/architect-study-plan
-  "Прогресс (milestones)": https://github.com/PaulJurichM/architect-study-plan/milestones
 aux_links_new_tab: true
+
 
 gh_edit_link: true
 gh_edit_link_text: "Редактировать на GitHub"

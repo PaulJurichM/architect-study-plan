@@ -48,7 +48,7 @@ flowchart LR
 
 ## Отслеживание прогресса
 
-- Каждый модуль — отдельный issue, каждый блок — milestone. Процент готовности блока виден на странице [Milestones](https://github.com/PaulJurichM/architect-study-plan/milestones).
+- Каждый модуль — отдельный issue, каждый блок — milestone. Общая картина — на странице [Прогресс](progress.md): полоски по блокам и статус каждого модуля. В начале каждого модуля тоже есть плашка со статусом и ссылкой на его issue.
 - Внутри issue — чек-лист «прочитал / сделал практику / ответил на вопросы / записал заметки». Issue закрывается, только когда отмечены все четыре пункта.
 - Заметки коммитятся прямо в файл модуля, в раздел «Заметки». Коммит со ссылкой `Closes #N` закрывает issue автоматически.
 - Issues и milestones создаёт скрипт [`scripts/create-issues.ps1`](https://github.com/PaulJurichM/architect-study-plan/blob/main/scripts/create-issues.ps1) по данным из `scripts/modules.json` (нужен GitHub CLI). Добавили модуль — дописали его в JSON и запустили скрипт снова, существующие issues он пропустит.

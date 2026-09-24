@@ -1,0 +1,19 @@
+.sp-badge{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:-.5rem 0 1.5rem;font-size:.875rem}
+.sp-pill{display:inline-block;padding:.15rem .6rem;border-radius:999px;font-weight:600;font-size:.8rem;white-space:nowrap}
+.sp-done .sp-pill,.sp-pill.sp-done{background:#dafbe1;color:#116329}
+.sp-wip .sp-pill,.sp-pill.sp-wip{background:#fff8c5;color:#7d4e00}
+.sp-todo .sp-pill,.sp-pill.sp-todo{background:#eaeef2;color:#57606a}
+.sp-bar{height:.6rem;background:#eaeef2;border-radius:999px;overflow:hidden;margin:.35rem 0 .25rem}
+.sp-bar>span{display:block;height:100%;background:#2da44e;border-radius:999px;transition:width .4s}
+.sp-block{margin:0 0 2rem}
+.sp-block h2{margin-bottom:.25rem}
+.sp-meta{color:#57606a;font-size:.85rem}
+.sp-list{list-style:none;padding-left:0;margin-top:.75rem}
+.sp-list li{display:flex;align-items:center;gap:.6rem;padding:.45rem 0;border-bottom:1px solid #eaeef2}
+.main-content ul.sp-list>li::before{content:none !important;display:none}
+.main-content ul.sp-list{padding-left:0}
+.main-content ul.sp-list>li{margin-left:0}
+.sp-list .sp-title{flex:1;min-width:0}
+.sp-list .sp-issue{font-size:.8rem;white-space:nowrap}
+.sp-total{font-size:1.1rem;margin-bottom:1.5rem}
+.sp-note{color:#57606a;font-size:.85rem}

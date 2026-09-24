@@ -1,7 +1,9 @@
 ﻿# Публикация программы на GitHub: коммит, репозиторий, GitHub Pages, issues.
 # Запуск (PowerShell, из любой папки):
 #   powershell -ExecutionPolicy Bypass -File "$HOME\Projects\architect-study-plan\scripts\publish.ps1"
-# Повторный запуск безопасен.
+# Повторный запуск безопасен. Своё сообщение коммита: ... publish.ps1 -Message "Заметки к 2.1"
+
+param([string]$Message = 'Update study plan')
 
 $ErrorActionPreference = 'Continue'   # native-команды проверяются по $LASTEXITCODE
 $owner = 'PaulJurichM'
@@ -22,7 +24,7 @@ git add -A
 git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {
     $msgFile = [System.IO.Path]::GetTempFileName()
-    $msg = "Initial study plan: HTTP/REST security, PostgreSQL internals, microservices & DDD`n`nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`nClaude-Session: https://claude.ai/code/session_01Y7eHyoDQAq1rpW3Kd5ePZc`n"
+    $msg = "$Message`n`nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`nClaude-Session: https://claude.ai/code/session_01Y7eHyoDQAq1rpW3Kd5ePZc`n"
     [System.IO.File]::WriteAllText($msgFile, $msg, (New-Object System.Text.UTF8Encoding $false))
     git commit -q -F $msgFile
     Remove-Item $msgFile
