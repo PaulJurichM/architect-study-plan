@@ -19,6 +19,41 @@
       "name": "capstone",
       "color": "d29922",
       "description": "Итоговый проект"
+    },
+    {
+      "name": "block-5-ai",
+      "color": "0e8a16",
+      "description": "ИИ в архитектуре систем"
+    },
+    {
+      "name": "block-6-practice",
+      "color": "5319e7",
+      "description": "Архитектурная практика"
+    },
+    {
+      "name": "block-7-system-design",
+      "color": "b60205",
+      "description": "System Design"
+    },
+    {
+      "name": "block-8-integration",
+      "color": "1d76db",
+      "description": "Интеграционные паттерны"
+    },
+    {
+      "name": "block-9-data",
+      "color": "fbca04",
+      "description": "Данные и аналитика"
+    },
+    {
+      "name": "block-10-infra",
+      "color": "006b75",
+      "description": "Инфраструктура и поставка"
+    },
+    {
+      "name": "block-11-role",
+      "color": "e99695",
+      "description": "Архитектор как роль"
     }
   ],
   "milestones": [
@@ -37,6 +72,34 @@
     {
       "title": "Итоговый проект",
       "description": "Недели 11–12"
+    },
+    {
+      "title": "Блок 5. ИИ в архитектуре систем",
+      "description": "Как устроены системы на основе больших языковых моделей и ML: RAG, агенты и инструменты, оценка качества, безопасность, эксплуатация моделей. Отдельный модуль — как аналитику постановить ИИ-функцию…"
+    },
+    {
+      "title": "Блок 6. Архитектурная практика",
+      "description": "Как архитектор принимает, обосновывает и фиксирует решения: атрибуты качества, ADR, модели C4 и arc42, анализ компромиссов, эволюция архитектуры и работа с легаси. Это то, что отличает архитектора от…"
+    },
+    {
+      "title": "Блок 7. System Design",
+      "description": "Интервью по системному дизайну — отдельный жанр: за 45–60 минут спроектировать систему вслух, управляя разговором и показывая компромиссы. Блок даёт метод, оценки, строительные блоки (кэш,…"
+    },
+    {
+      "title": "Блок 8. Интеграционные паттерны",
+      "description": "В реальных проектах интеграции — это не только REST: gRPC между сервисами, GraphQL для фронтенда, пакетный обмен файлами с банками и поставщиками, CDC между базами, SOAP и шины у крупных заказчиков.…"
+    },
+    {
+      "title": "Блок 9. Данные и аналитика",
+      "description": "Операционные системы производят данные, аналитические системы превращают их в отчёты, прогнозы и решения. Блок о том, как устроены аналитические хранилища, как моделировать данные для анализа, как…"
+    },
+    {
+      "title": "Блок 10. Инфраструктура и поставка",
+      "description": "Архитектору не нужно администрировать Kubernetes, но нужно понимать, как система будет развёрнута, выпущена, восстановлена после аварии и сколько это стоит. Без этого требования к развёртыванию,…"
+    },
+    {
+      "title": "Блок 11. Архитектор как роль",
+      "description": "Техническое решение ничего не стоит, если его не приняли люди. Архитектор большую часть времени договаривается: выясняет интересы стейкхолдеров, проводит ревью, оценивает сроки, фасилитирует…"
     }
   ],
   "issues": [
@@ -153,6 +216,240 @@
       "milestone": "Итоговый проект",
       "label": "capstone",
       "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/04-capstone/README.html\n**Исходник:** [`04-capstone/README.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/04-capstone/README.md)\n**Неделя:** 11–12\n\n## Готовность\n\n- [ ] Прочитал материалы из раздела «Читать»\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "5.1 Как работают LLM: взгляд инженера",
+      "milestone": "Блок 5. ИИ в архитектуре систем",
+      "label": "block-5-ai",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/05-ai-engineering/5.1-llm-basics.html\n**Исходник:** [`05-ai-engineering/5.1-llm-basics.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/05-ai-engineering/5.1-llm-basics.md)\n**Неделя:** 19\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "5.2 RAG: поиск и генерация по своим данным",
+      "milestone": "Блок 5. ИИ в архитектуре систем",
+      "label": "block-5-ai",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/05-ai-engineering/5.2-rag.html\n**Исходник:** [`05-ai-engineering/5.2-rag.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/05-ai-engineering/5.2-rag.md)\n**Неделя:** 20\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "5.3 Агенты, вызов инструментов и MCP",
+      "milestone": "Блок 5. ИИ в архитектуре систем",
+      "label": "block-5-ai",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/05-ai-engineering/5.3-agents-tools-mcp.html\n**Исходник:** [`05-ai-engineering/5.3-agents-tools-mcp.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/05-ai-engineering/5.3-agents-tools-mcp.md)\n**Неделя:** 21\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "5.4 Оценка качества ИИ-систем (evals)",
+      "milestone": "Блок 5. ИИ в архитектуре систем",
+      "label": "block-5-ai",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/05-ai-engineering/5.4-evals.html\n**Исходник:** [`05-ai-engineering/5.4-evals.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/05-ai-engineering/5.4-evals.md)\n**Неделя:** 22\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "5.5 Безопасность LLM-систем",
+      "milestone": "Блок 5. ИИ в архитектуре систем",
+      "label": "block-5-ai",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/05-ai-engineering/5.5-llm-security.html\n**Исходник:** [`05-ai-engineering/5.5-llm-security.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/05-ai-engineering/5.5-llm-security.md)\n**Неделя:** 23\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "5.6 ML-системы в эксплуатации: от данных до переобучения",
+      "milestone": "Блок 5. ИИ в архитектуре систем",
+      "label": "block-5-ai",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/05-ai-engineering/5.6-ml-in-production.html\n**Исходник:** [`05-ai-engineering/5.6-ml-in-production.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/05-ai-engineering/5.6-ml-in-production.md)\n**Неделя:** 24\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "5.7 Как постановить ИИ-функцию: требования, приёмка, эксплуатация",
+      "milestone": "Блок 5. ИИ в архитектуре систем",
+      "label": "block-5-ai",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/05-ai-engineering/5.7-ai-feature-requirements.html\n**Исходник:** [`05-ai-engineering/5.7-ai-feature-requirements.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/05-ai-engineering/5.7-ai-feature-requirements.md)\n**Неделя:** 25\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "6.1 Атрибуты качества и нефункциональные требования",
+      "milestone": "Блок 6. Архитектурная практика",
+      "label": "block-6-practice",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/06-architecture-practice/6.1-quality-attributes.html\n**Исходник:** [`06-architecture-practice/6.1-quality-attributes.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/06-architecture-practice/6.1-quality-attributes.md)\n**Неделя:** 13–14\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "6.2 Architecture Decision Records: журнал решений",
+      "milestone": "Блок 6. Архитектурная практика",
+      "label": "block-6-practice",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/06-architecture-practice/6.2-adr.html\n**Исходник:** [`06-architecture-practice/6.2-adr.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/06-architecture-practice/6.2-adr.md)\n**Неделя:** 15\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "6.3 Модели и документы: C4, arc42, диаграммы как код",
+      "milestone": "Блок 6. Архитектурная практика",
+      "label": "block-6-practice",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/06-architecture-practice/6.3-c4-arc42.html\n**Исходник:** [`06-architecture-practice/6.3-c4-arc42.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/06-architecture-practice/6.3-c4-arc42.md)\n**Неделя:** 16\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "6.4 Анализ компромиссов и оценка архитектуры",
+      "milestone": "Блок 6. Архитектурная практика",
+      "label": "block-6-practice",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/06-architecture-practice/6.4-tradeoff-analysis.html\n**Исходник:** [`06-architecture-practice/6.4-tradeoff-analysis.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/06-architecture-practice/6.4-tradeoff-analysis.md)\n**Неделя:** 17\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "6.5 Эволюционная архитектура, технический долг и модернизация легаси",
+      "milestone": "Блок 6. Архитектурная практика",
+      "label": "block-6-practice",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/06-architecture-practice/6.5-evolutionary-architecture.html\n**Исходник:** [`06-architecture-practice/6.5-evolutionary-architecture.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/06-architecture-practice/6.5-evolutionary-architecture.md)\n**Неделя:** 18\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "7.1 Метод: как вести интервью по системному дизайну",
+      "milestone": "Блок 7. System Design",
+      "label": "block-7-system-design",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/07-system-design/7.1-interview-method.html\n**Исходник:** [`07-system-design/7.1-interview-method.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/07-system-design/7.1-interview-method.md)\n**Неделя:** 13\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "7.2 Оценки на салфетке: нагрузка, объёмы, пропускная способность",
+      "milestone": "Блок 7. System Design",
+      "label": "block-7-system-design",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/07-system-design/7.2-estimation.html\n**Исходник:** [`07-system-design/7.2-estimation.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/07-system-design/7.2-estimation.md)\n**Неделя:** 14\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "7.3 Кэширование",
+      "milestone": "Блок 7. System Design",
+      "label": "block-7-system-design",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/07-system-design/7.3-caching.html\n**Исходник:** [`07-system-design/7.3-caching.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/07-system-design/7.3-caching.md)\n**Неделя:** 15\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "7.4 Масштабирование данных: репликация, шардирование, согласованность",
+      "milestone": "Блок 7. System Design",
+      "label": "block-7-system-design",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/07-system-design/7.4-scaling-data.html\n**Исходник:** [`07-system-design/7.4-scaling-data.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/07-system-design/7.4-scaling-data.md)\n**Неделя:** 16\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "7.5 Строительные блоки: очереди, поиск, объектное хранилище, CDN, rate limiting",
+      "milestone": "Блок 7. System Design",
+      "label": "block-7-system-design",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/07-system-design/7.5-building-blocks.html\n**Исходник:** [`07-system-design/7.5-building-blocks.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/07-system-design/7.5-building-blocks.md)\n**Неделя:** 17\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "7.6 Классические задачи: разбор и тренировка",
+      "milestone": "Блок 7. System Design",
+      "label": "block-7-system-design",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/07-system-design/7.6-classic-cases.html\n**Исходник:** [`07-system-design/7.6-classic-cases.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/07-system-design/7.6-classic-cases.md)\n**Неделя:** 18\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "8.1 Enterprise Integration Patterns: язык интеграций",
+      "milestone": "Блок 8. Интеграционные паттерны",
+      "label": "block-8-integration",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/08-integration-patterns/8.1-eip.html\n**Исходник:** [`08-integration-patterns/8.1-eip.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/08-integration-patterns/8.1-eip.md)\n**Неделя:** 26\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "8.2 gRPC и GraphQL: когда не REST",
+      "milestone": "Блок 8. Интеграционные паттерны",
+      "label": "block-8-integration",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/08-integration-patterns/8.2-grpc-graphql.html\n**Исходник:** [`08-integration-patterns/8.2-grpc-graphql.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/08-integration-patterns/8.2-grpc-graphql.md)\n**Неделя:** 26\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "8.3 Жизненный цикл API: контракты, версии, управление",
+      "milestone": "Блок 8. Интеграционные паттерны",
+      "label": "block-8-integration",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/08-integration-patterns/8.3-api-lifecycle.html\n**Исходник:** [`08-integration-patterns/8.3-api-lifecycle.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/08-integration-patterns/8.3-api-lifecycle.md)\n**Неделя:** 27\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "8.4 Пакетные и файловые интеграции, ETL и сверки",
+      "milestone": "Блок 8. Интеграционные паттерны",
+      "label": "block-8-integration",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/08-integration-patterns/8.4-batch-file-integration.html\n**Исходник:** [`08-integration-patterns/8.4-batch-file-integration.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/08-integration-patterns/8.4-batch-file-integration.md)\n**Неделя:** 27\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "8.5 CDC и синхронизация данных между системами",
+      "milestone": "Блок 8. Интеграционные паттерны",
+      "label": "block-8-integration",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/08-integration-patterns/8.5-cdc-data-sync.html\n**Исходник:** [`08-integration-patterns/8.5-cdc-data-sync.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/08-integration-patterns/8.5-cdc-data-sync.md)\n**Неделя:** 27\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "8.6 Легаси-интеграции: SOAP, шины, iPaaS",
+      "milestone": "Блок 8. Интеграционные паттерны",
+      "label": "block-8-integration",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/08-integration-patterns/8.6-legacy-esb.html\n**Исходник:** [`08-integration-patterns/8.6-legacy-esb.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/08-integration-patterns/8.6-legacy-esb.md)\n**Неделя:** 27\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "9.1 OLTP и OLAP: почему отчёты не строят на проде",
+      "milestone": "Блок 9. Данные и аналитика",
+      "label": "block-9-data",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/09-data-platforms/9.1-oltp-olap.html\n**Исходник:** [`09-data-platforms/9.1-oltp-olap.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/09-data-platforms/9.1-oltp-olap.md)\n**Неделя:** 28\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "9.2 Моделирование хранилища данных: Кимбалл, Data Vault, слои",
+      "milestone": "Блок 9. Данные и аналитика",
+      "label": "block-9-data",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/09-data-platforms/9.2-dwh-modeling.html\n**Исходник:** [`09-data-platforms/9.2-dwh-modeling.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/09-data-platforms/9.2-dwh-modeling.md)\n**Неделя:** 28\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "9.3 Конвейеры данных: ETL, ELT, оркестрация, потоковая обработка",
+      "milestone": "Блок 9. Данные и аналитика",
+      "label": "block-9-data",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/09-data-platforms/9.3-pipelines-streaming.html\n**Исходник:** [`09-data-platforms/9.3-pipelines-streaming.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/09-data-platforms/9.3-pipelines-streaming.md)\n**Неделя:** 29\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "9.4 Аналитические СУБД и выбор хранилища для данных",
+      "milestone": "Блок 9. Данные и аналитика",
+      "label": "block-9-data",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/09-data-platforms/9.4-analytical-engines.html\n**Исходник:** [`09-data-platforms/9.4-analytical-engines.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/09-data-platforms/9.4-analytical-engines.md)\n**Неделя:** 29\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "9.5 Качество данных, контракты данных, data mesh",
+      "milestone": "Блок 9. Данные и аналитика",
+      "label": "block-9-data",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/09-data-platforms/9.5-data-quality-governance.html\n**Исходник:** [`09-data-platforms/9.5-data-quality-governance.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/09-data-platforms/9.5-data-quality-governance.md)\n**Неделя:** 29\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "10.1 Контейнеры и Kubernetes для архитектора",
+      "milestone": "Блок 10. Инфраструктура и поставка",
+      "label": "block-10-infra",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/10-infrastructure-delivery/10.1-containers-kubernetes.html\n**Исходник:** [`10-infrastructure-delivery/10.1-containers-kubernetes.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/10-infrastructure-delivery/10.1-containers-kubernetes.md)\n**Неделя:** 30\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "10.2 CI/CD, стратегии релизов, feature flags",
+      "milestone": "Блок 10. Инфраструктура и поставка",
+      "label": "block-10-infra",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/10-infrastructure-delivery/10.2-cicd-release.html\n**Исходник:** [`10-infrastructure-delivery/10.2-cicd-release.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/10-infrastructure-delivery/10.2-cicd-release.md)\n**Неделя:** 30\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "10.3 Облака: сервисы, модели, привязка к вендору",
+      "milestone": "Блок 10. Инфраструктура и поставка",
+      "label": "block-10-infra",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/10-infrastructure-delivery/10.3-cloud.html\n**Исходник:** [`10-infrastructure-delivery/10.3-cloud.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/10-infrastructure-delivery/10.3-cloud.md)\n**Неделя:** 31\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "10.4 Отказоустойчивость, аварийное восстановление, мультирегион",
+      "milestone": "Блок 10. Инфраструктура и поставка",
+      "label": "block-10-infra",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/10-infrastructure-delivery/10.4-dr-multiregion.html\n**Исходник:** [`10-infrastructure-delivery/10.4-dr-multiregion.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/10-infrastructure-delivery/10.4-dr-multiregion.md)\n**Неделя:** 31\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "10.5 SRE-практики, управление инцидентами и стоимость (FinOps)",
+      "milestone": "Блок 10. Инфраструктура и поставка",
+      "label": "block-10-infra",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/10-infrastructure-delivery/10.5-sre-finops.html\n**Исходник:** [`10-infrastructure-delivery/10.5-sre-finops.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/10-infrastructure-delivery/10.5-sre-finops.md)\n**Неделя:** 31\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "11.1 Работа со стейкхолдерами и влияние без полномочий",
+      "milestone": "Блок 11. Архитектор как роль",
+      "label": "block-11-role",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/11-architect-role/11.1-stakeholders.html\n**Исходник:** [`11-architect-role/11.1-stakeholders.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/11-architect-role/11.1-stakeholders.md)\n**Неделя:** 19\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "11.2 Архитектурное ревью: как проводить и как проходить",
+      "milestone": "Блок 11. Архитектор как роль",
+      "label": "block-11-role",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/11-architect-role/11.2-architecture-review.html\n**Исходник:** [`11-architect-role/11.2-architecture-review.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/11-architect-role/11.2-architecture-review.md)\n**Неделя:** 20\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "11.3 Оценка трудоёмкости и работа с неопределённостью",
+      "milestone": "Блок 11. Архитектор как роль",
+      "label": "block-11-role",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/11-architect-role/11.3-estimation.html\n**Исходник:** [`11-architect-role/11.3-estimation.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/11-architect-role/11.3-estimation.md)\n**Неделя:** 21\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "11.4 Фасилитация: воркшопы, групповые решения, конфликты",
+      "milestone": "Блок 11. Архитектор как роль",
+      "label": "block-11-role",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/11-architect-role/11.4-facilitation.html\n**Исходник:** [`11-architect-role/11.4-facilitation.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/11-architect-role/11.4-facilitation.md)\n**Неделя:** 22\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
+    },
+    {
+      "title": "11.5 Поведенческое интервью и рассказ о своём опыте",
+      "milestone": "Блок 11. Архитектор как роль",
+      "label": "block-11-role",
+      "body": "**Материал:** https://pauljurichm.github.io/architect-study-plan/11-architect-role/11.5-behavioral-interview.html\n**Исходник:** [`11-architect-role/11.5-behavioral-interview.md`](https://github.com/PaulJurichM/architect-study-plan/blob/main/11-architect-role/11.5-behavioral-interview.md)\n**Неделя:** 23–24\n\n## Готовность\n\n- [ ] Прочитал урок и материалы из раздела «Читать дальше» (по желанию)\n- [ ] Сделал практику\n- [ ] Ответил вслух на все вопросы для самопроверки, без подглядывания\n- [ ] Записал выводы своими словами в раздел «Заметки»\n\nЗакрыть коммитом с заметками: `Closes #<номер этого issue>`.\n"
     }
   ]
 }

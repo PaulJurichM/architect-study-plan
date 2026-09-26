@@ -2,7 +2,7 @@
 (function () {
   var REPO = 'PaulJurichM/architect-study-plan';
   var API = 'https://api.github.com/repos/' + REPO + '/issues?state=all&per_page=100';
-  var CACHE_KEY = 'study-progress-v1';
+  var CACHE_KEY = 'study-progress-v2';
   var TTL = 2 * 60 * 1000;
 
   function cacheGet() {
@@ -59,23 +59,21 @@
   }
   function pct(x) { return Math.round(x * 100); }
 
-  // Плашка статуса на странице модуля
-  function renderBadge(n) {
+  // Плашка статуса на странице модуля: issue ищется по пути к исходному файлу в его описании
+  function renderBadge(path) {
     var h1 = document.querySelector('#main-content h1');
     if (!h1) return;
-    var box = document.createElement('div');
-    box.className = 'sp-badge';
-    var link = '<a href="https://github.com/' + REPO + '/issues/' + n + '" target="_blank" rel="noopener">Отметить прогресс в issue #' + n + '</a>';
-    box.innerHTML = '<span class="sp-pill sp-todo">…</span>' + link;
-    h1.insertAdjacentElement('afterend', box);
     load().then(function (d) {
-      var i = d.filter(function (x) { return x.n === n; })[0];
+      var needle = 'blob/main/' + path;
+      var i = d.filter(function (x) { return x.body.indexOf(needle) !== -1; })[0];
       if (!i) return;
       var s = status(i);
+      var box = document.createElement('div');
       box.className = 'sp-badge ' + s.cls;
-      box.firstChild.textContent = s.text;
-      box.firstChild.className = 'sp-pill';
-    }).catch(function () { box.firstChild.remove(); });
+      box.innerHTML = '<span class="sp-pill">' + esc(s.text) + '</span>' +
+        '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">Отметить прогресс в issue #' + i.n + '</a>';
+      h1.insertAdjacentElement('afterend', box);
+    }).catch(function () {});
   }
 
   // Страница «Прогресс»
@@ -84,7 +82,8 @@
     load().then(function (d) {
       var groups = {};
       d.forEach(function (i) { (groups[i.msn] = groups[i.msn] || { title: i.ms, items: [] }).items.push(i); });
-      var keys = Object.keys(groups).sort(function (a, b) { return a - b; });
+      function rank(k) { var m = /Блок (\d+)/.exec(groups[k].title); return m ? parseInt(m[1], 10) : 4.5; }
+      var keys = Object.keys(groups).sort(function (a, b) { return rank(a) - rank(b); });
       var total = 0, closed = 0, sum = 0;
       var html = '';
       keys.forEach(function (k) {
@@ -115,8 +114,8 @@
   }
 
   function init() {
-    var meta = document.querySelector('meta[name="study-issue"]');
-    if (meta && meta.content) renderBadge(parseInt(meta.content, 10));
+    var meta = document.querySelector('meta[name="study-source"]');
+    if (meta && meta.content && /\.md$/.test(meta.content)) renderBadge(meta.content);
     var root = document.getElementById('sp-progress');
     if (root) renderProgress(root);
   }
