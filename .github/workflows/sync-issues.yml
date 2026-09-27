@@ -1,0 +1,47 @@
+# Создаёт и обновляет метки, milestones и issues по scripts/modules.json.
+# В копии программы (из шаблона) ещё и подставляет её адреса в _config.yml.
+# Запуск вручную: вкладка Actions → «Синхронизировать issues» → Run workflow.
+# Автоматически — при изменении scripts/modules.json в ветке main.
+name: Синхронизировать issues
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [scripts/modules.json]
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+
+concurrency:
+  group: sync-issues
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Адреса сайта в _config.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 -c "import sys; sys.path.insert(0, 'scripts'); import sync_issues as s; s.patch_config()"
+          if ! git diff --quiet -- _config.yml; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Адреса сайта для репозитория ${GITHUB_REPOSITORY}" -- _config.yml
+            git push
+            # коммит от GITHUB_TOKEN может не запустить сборку Pages — просим её явно
+            curl -s -o /dev/null -w "Pages build request: %{http_code}\n" -X POST \
+              -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds" || true
+          fi
+
+      - name: Метки, milestones и issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/sync_issues.py

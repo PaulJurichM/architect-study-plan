@@ -1,53 +1,24 @@
-﻿# Создаёт метки, milestones и issues по модулям программы.
-# Требуется GitHub CLI (gh), авторизованный под владельцем репозитория: gh auth status
-# Запуск из любой папки:  powershell -ExecutionPolicy Bypass -File .\scripts\create-issues.ps1
-# Повторный запуск безопасен: существующие milestones пропускаются, существующие issues (по пути к файлу модуля)
-# обновляются — заголовок, milestone, метка; описание не трогается, чтобы не сбросить отмеченные галочки.
+﻿# Запускает в GitHub Actions синхронизацию меток, milestones и issues (workflow «Синхронизировать issues»)
+# и ждёт её окончания. Вся логика — в scripts/sync_issues.py, этот файл только нажимает кнопку.
+# Запуск: powershell -ExecutionPolicy Bypass -File .\scripts\create-issues.ps1
 
-$ErrorActionPreference = 'Continue'   # native-команды проверяются по $LASTEXITCODE
-$repo = 'PaulJurichM/architect-study-plan'
-$utf8 = New-Object System.Text.UTF8Encoding $false
-[Console]::OutputEncoding = $utf8
-$data = [System.IO.File]::ReadAllText((Join-Path $PSScriptRoot 'modules.json'), $utf8) | ConvertFrom-Json
+$ErrorActionPreference = 'Continue'
+[Console]::OutputEncoding = New-Object System.Text.UTF8Encoding $false
+Set-Location (Split-Path $PSScriptRoot -Parent)
 
-# В Windows PowerShell 5.1 ConvertFrom-Json отдаёт JSON-массив одним объектом — разворачиваем явно
-function From-JsonArray($text) { @(($text | Out-String | ConvertFrom-Json) | ForEach-Object { $_ }) }
+$repo = gh repo view --json nameWithOwner -q .nameWithOwner
+if ($LASTEXITCODE -ne 0 -or -not $repo) { Write-Host 'Не удалось определить репозиторий (нужен gh и клон репозитория).'; exit 1 }
 
-foreach ($l in $data.labels) {
-    gh label create $l.name --color $l.color --description $l.description --repo $repo --force | Out-Null
+$before = gh run list --repo $repo --workflow sync-issues.yml --limit 1 --json databaseId -q '.[0].databaseId'
+gh workflow run sync-issues.yml --repo $repo
+if ($LASTEXITCODE -ne 0) { Write-Host 'Не удалось запустить workflow. Проверьте, что файл .github/workflows/sync-issues.yml запушен.'; exit 1 }
+
+$id = $null
+for ($k = 0; $k -lt 20 -and -not $id; $k++) {
+    Start-Sleep -Seconds 3
+    $last = gh run list --repo $repo --workflow sync-issues.yml --limit 1 --json databaseId -q '.[0].databaseId'
+    if ($last -and $last -ne $before) { $id = $last }
 }
-Write-Host "Метки готовы"
-
-$existingMs = From-JsonArray (gh api "repos/$repo/milestones?state=all&per_page=100")
-foreach ($m in $data.milestones) {
-    if ($existingMs | Where-Object { $_.title -eq $m.title }) { continue }
-    gh api "repos/$repo/milestones" -f "title=$($m.title)" -f "description=$($m.description)" | Out-Null
-    Write-Host "Milestone: $($m.title)"
-}
-
-$existingIssues = From-JsonArray (gh issue list --repo $repo --state all --limit 500 --json number,title,body,milestone,labels)
-foreach ($i in $data.issues) {
-    # Существующий issue ищется по пути к файлу модуля в описании — так переименование модуля не создаёт дубль
-    $path = [regex]::Match($i.body, 'blob/main/([^)\s]+?\.md)').Groups[1].Value
-    $found = $existingIssues | Where-Object { $_.body -and $path -and $_.body.Contains("blob/main/$path") } | Select-Object -First 1
-    if (-not $found) { $found = $existingIssues | Where-Object { $_.title -eq $i.title } | Select-Object -First 1 }
-    if ($found -and ($found.number -isnot [int] -and $found.number -isnot [long])) { throw "Ошибка разбора списка issues: найден не один issue" }
-    if ($found) {
-        $editArgs = @()
-        if ($found.title -ne $i.title) { $editArgs += @('--title', $i.title) }
-        $ms = if ($found.milestone) { $found.milestone.title } else { '' }
-        if ($ms -ne $i.milestone) { $editArgs += @('--milestone', $i.milestone) }
-        if (-not ($found.labels | Where-Object { $_.name -eq $i.label })) { $editArgs += @('--add-label', $i.label) }
-        if ($editArgs.Count -gt 0) {
-            gh issue edit $found.number --repo $repo @editArgs | Out-Null
-            Write-Host "Обновлён #$($found.number): $($i.title)"
-        }
-        continue
-    }
-    $tmp = [System.IO.Path]::GetTempFileName()
-    [System.IO.File]::WriteAllText($tmp, $i.body, $utf8)
-    gh issue create --repo $repo --title $i.title --milestone $i.milestone --label $i.label --body-file $tmp | Out-Null
-    Remove-Item $tmp
-    Write-Host "Создан: $($i.title)"
-}
-Write-Host "Готово: https://github.com/$repo/milestones"
+if (-not $id) { Write-Host "Запуск не появился. Посмотрите: https://github.com/$repo/actions"; exit 1 }
+gh run watch $id --repo $repo --exit-status
+gh run view $id --repo $repo --log | Select-String -Pattern 'Итого|ВНИМАНИЕ|создан|Ошибка' | ForEach-Object { $_.Line -replace '^.*?\d{2}Z ', '' }

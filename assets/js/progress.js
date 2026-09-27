@@ -1,6 +1,13 @@
 // Прогресс по программе: читает issues репозитория через публичный GitHub API.
 (function () {
-  var REPO = 'PaulJurichM/architect-study-plan';
+  // Репозиторий определяется по адресу сайта (<owner>.github.io/<repo>/), поэтому копия программы
+  // из шаблона сразу показывает свой прогресс. Запасной вариант — мета-тег из _config.yml.
+  var REPO = (function () {
+    var h = location.hostname, seg = location.pathname.split('/')[1];
+    if (/\.github\.io$/.test(h) && seg) return h.split('.')[0] + '/' + seg;
+    var m = document.querySelector('meta[name="study-repo"]');
+    return m && m.content ? m.content : 'PaulJurichM/architect-study-plan';
+  })();
   var API = 'https://api.github.com/repos/' + REPO + '/issues?state=all&per_page=100';
   var CACHE_KEY = 'study-progress-v2';
   var TTL = 2 * 60 * 1000;
@@ -82,7 +89,14 @@
     load().then(function (d) {
       var groups = {};
       d.forEach(function (i) { (groups[i.msn] = groups[i.msn] || { title: i.ms, items: [] }).items.push(i); });
-      function rank(k) { var m = /Блок (\d+)/.exec(groups[k].title); return m ? parseInt(m[1], 10) : 4.5; }
+      function rank(k) {
+        var t = groups[k].title, m = /Блок (\d+)/.exec(t);
+        if (m) return parseInt(m[1], 10);
+        if (/Этап 0А/.test(t)) return -2;
+        if (/Этап 0Б/.test(t)) return -1;
+        if (/Итоговый/.test(t)) return 4;
+        return 99;
+      }
       var keys = Object.keys(groups).sort(function (a, b) { return rank(a) - rank(b); });
       var total = 0, closed = 0, sum = 0;
       var html = '';

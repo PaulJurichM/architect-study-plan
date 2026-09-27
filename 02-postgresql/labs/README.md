@@ -17,7 +17,7 @@ docker compose up -d
 docker compose logs -f db     # дождаться "database system is ready to accept connections"
 ```
 
-Первый старт занимает около минуты: скрипт [`init/01-seed.sql`](https://github.com/PaulJurichM/architect-study-plan/blob/main/02-postgresql/labs/init/01-seed.sql) создаёт таблицы и генерирует миллион заказов.
+Первый старт занимает около минуты: скрипт [`init/01-seed.sql`](init/01-seed.sql) создаёт таблицы и генерирует миллион заказов.
 
 ## Подключение
 
