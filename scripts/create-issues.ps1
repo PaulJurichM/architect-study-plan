@@ -10,24 +10,28 @@ $utf8 = New-Object System.Text.UTF8Encoding $false
 [Console]::OutputEncoding = $utf8
 $data = [System.IO.File]::ReadAllText((Join-Path $PSScriptRoot 'modules.json'), $utf8) | ConvertFrom-Json
 
+# В Windows PowerShell 5.1 ConvertFrom-Json отдаёт JSON-массив одним объектом — разворачиваем явно
+function From-JsonArray($text) { @(($text | Out-String | ConvertFrom-Json) | ForEach-Object { $_ }) }
+
 foreach ($l in $data.labels) {
     gh label create $l.name --color $l.color --description $l.description --repo $repo --force | Out-Null
 }
 Write-Host "Метки готовы"
 
-$existingMs = @(gh api "repos/$repo/milestones?state=all&per_page=100" | ConvertFrom-Json)
+$existingMs = From-JsonArray (gh api "repos/$repo/milestones?state=all&per_page=100")
 foreach ($m in $data.milestones) {
     if ($existingMs | Where-Object { $_.title -eq $m.title }) { continue }
     gh api "repos/$repo/milestones" -f "title=$($m.title)" -f "description=$($m.description)" | Out-Null
     Write-Host "Milestone: $($m.title)"
 }
 
-$existingIssues = @(gh issue list --repo $repo --state all --limit 500 --json number,title,body,milestone,labels | ConvertFrom-Json)
+$existingIssues = From-JsonArray (gh issue list --repo $repo --state all --limit 500 --json number,title,body,milestone,labels)
 foreach ($i in $data.issues) {
     # Существующий issue ищется по пути к файлу модуля в описании — так переименование модуля не создаёт дубль
     $path = [regex]::Match($i.body, 'blob/main/([^)\s]+?\.md)').Groups[1].Value
     $found = $existingIssues | Where-Object { $_.body -and $path -and $_.body.Contains("blob/main/$path") } | Select-Object -First 1
     if (-not $found) { $found = $existingIssues | Where-Object { $_.title -eq $i.title } | Select-Object -First 1 }
+    if ($found -and ($found.number -isnot [int] -and $found.number -isnot [long])) { throw "Ошибка разбора списка issues: найден не один issue" }
     if ($found) {
         $editArgs = @()
         if ($found.title -ne $i.title) { $editArgs += @('--title', $i.title) }

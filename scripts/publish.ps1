@@ -3,7 +3,7 @@
 #   powershell -ExecutionPolicy Bypass -File "$HOME\Projects\architect-study-plan\scripts\publish.ps1"
 # Повторный запуск безопасен. Своё сообщение коммита: ... publish.ps1 -Message "Заметки к 2.1"
 
-param([string]$Message = 'Update study plan')
+param([string]$Message = 'Update study plan', [switch]$SyncIssues)
 
 $ErrorActionPreference = 'Continue'   # native-команды проверяются по $LASTEXITCODE
 $owner = 'PaulJurichM'
@@ -81,8 +81,12 @@ if ($LASTEXITCODE -ne 0) {
 } else { Write-Host 'Pages уже включены' }
 gh repo edit $repo --homepage "https://$($owner.ToLower()).github.io/$name/" | Out-Null
 
-Step 'Milestones и issues'
-& (Join-Path $PSScriptRoot 'create-issues.ps1')
+if ($SyncIssues) {
+    Step 'Milestones и issues'
+    & (Join-Path $PSScriptRoot 'create-issues.ps1')
+} else {
+    Write-Host "`nIssues не синхронизировались (для этого запустите с ключом -SyncIssues)."
+}
 
 Write-Host "`nГотово:" -ForegroundColor Green
 Write-Host "  Сайт:     https://$($owner.ToLower()).github.io/$name/"
