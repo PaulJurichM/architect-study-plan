@@ -23,6 +23,11 @@ nav_order: 13
 - [ ] Арно Лоре, «Проектирование веб-API» (The Design of Web APIs).
 - [ ] Сэм Ньюмен, «Создание микросервисов» (2-е изд.) — главы 1–5.
 
+### Этап 0В. SQL-практикум
+- [ ] Алан Бьюли, «Изучаем SQL» (Learning SQL) — справочник по синтаксису под рукой во время практикума.
+- [ ] Markus Winand, *SQL Performance Explained* и сайт use-the-index-luke.com — как писать запросы, которые работают с индексами, а не против них.
+- [ ] Официальная документация PostgreSQL: разделы о запросах, оконных функциях, типах даты и времени, EXPLAIN.
+
 ### Блок 1. HTTP, REST, безопасность
 - [ ] Ilya Grigorik — *High Performance Browser Networking* (бесплатно: [hpbn.co](https://hpbn.co))
 - [ ] David Wong — *Real-World Cryptography* (Manning, 2021)

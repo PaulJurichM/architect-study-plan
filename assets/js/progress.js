@@ -94,6 +94,7 @@
         if (m) return parseInt(m[1], 10);
         if (/Этап 0А/.test(t)) return -2;
         if (/Этап 0Б/.test(t)) return -1;
+        if (/Этап 0В/.test(t)) return -0.5;
         if (/Итоговый/.test(t)) return 4;
         return 99;
       }

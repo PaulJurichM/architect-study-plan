@@ -20,6 +20,7 @@ nav_order: 4
 
 Тема подробнее раскрывается в модулях:
 
+- [Этап 0В. SQL-практикум](../00c-sql-practicum/README.md) — оконные функции, CTE и EXPLAIN на задачах с грязными данными
 - [2.1 MVCC и хранение](../02-postgresql/2.1-mvcc-storage.md)
 - [2.2 Изоляция транзакций](../02-postgresql/2.2-isolation.md)
 - [2.3 Блокировки](../02-postgresql/2.3-locks.md)
